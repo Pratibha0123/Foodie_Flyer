@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import './LoginPopUp.css'
 import { assets } from '../../assets/assets'
+import PropTypes from 'prop-types';
 const LoginPopUp = ({setShowLogin}) => {
     const[currState,setCurrState]=useState("Login")
   return (
@@ -18,7 +19,7 @@ const LoginPopUp = ({setShowLogin}) => {
                 </div>
                 <button>{currState=="Sign Up"?"Create account":"Login"}</button>
                 <div className="login-popup-condition">
-                    <input type="checkbox" rrequired />
+                    <input type="checkbox" required />
                     <p>By continuting,i agree to the terms of use & privacy policy</p>
                 </div>
                 {currState ==="Login"
@@ -29,5 +30,8 @@ const LoginPopUp = ({setShowLogin}) => {
     </div>
   )
 }
+LoginPopUp.propTypes = {
+  setShowLogin: PropTypes.func.isRequired,
+};
 
-export default LoginPopUp
+export default LoginPopUp;

@@ -1,10 +1,10 @@
 .header {
-    height: 34vw;
-    margin: 30px auto;
-    background: url('/header_img.png') no-repeat;
-    background-size: contain;
+    width: 100%;
+    height: 40vw;
+    max-height: 500px;
+    background: url('/header_img.png') no-repeat center center;
+    background-size: cover;
     position: relative;
-    width: 200%;
 }
 
 .header-contents {
@@ -58,5 +58,60 @@
     }
     .header-contents button {
         padding: 2vw 4vw;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1050px) {
+    .header {
+        height: 45vw;
+    }
+    .header-contents {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        height: 50vw;
+        padding: 0 8%;
+    }
+    .header-contents {
+        max-width: 70%;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 60vw;
+        padding: 0 5%;
+    }
+    .header-contents {
+        max-width: 90%;
+        gap: 10px;
+    }
+    .header-contents h2 {
+        font-size: clamp(20px, 6vw, 28px);
+    }
+    .header-contents button {
+        padding: 10px 20px;
+        font-size: 13px;
     }
 }
