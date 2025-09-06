@@ -7,9 +7,12 @@ import PlaceOrder from './Components/Pages/Place Order/PlaceOrder';
 import Footer from './Components/Footer/Footer';
 import LoginPopUp from './Components/LoginPopUp/LoginPopUp';
 import ContactUs from './Components/Contact/ContactUs';
-import ExplorMenu from './Components/ExploreMenu/ExplorMenu';
+// import ExplorMenu from './Components/ExploreMenu/ExplorMenu';
+import Menu from './Components/ExploreMenu/Menu';
 // import Menu from './Components/ExploreMenu/Menu';
-
+import AboutUs from './Components/Pages/Info/AboutUs';
+import Delivery from './Components/Pages/Info/Delivery';
+import PrivacyPolicy from './Components/Pages/Info/PrivacyPolicy';
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
 
@@ -20,9 +23,12 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<ContactUs />} />
-        <Route path='/explore-menu' element={<ExplorMenu/>} />
+        <Route path='/menu' element={<Menu/>} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/placeOrder' element={<PlaceOrder />} />
+        <Route path='/about' element={<AboutUs />} />
+<Route path='/delivery' element={<Delivery />} />
+<Route path='/privacy-policy' element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </div>

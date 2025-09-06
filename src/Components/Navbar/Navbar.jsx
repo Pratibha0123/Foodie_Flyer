@@ -22,8 +22,11 @@ function Navbar({ setShowLogin }) {
       {/* Desktop Menu */}
       <ul className="navbar-menu">
         <Link to="/" onClick={() => setMenu('home')} className={menu === 'home' ? 'active' : ''}>Home</Link>
-        <Link to="/explore-menu" onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>Menu</Link>
+        <Link to="/menu" onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>Menu</Link>
         <a href="#AppDownload" onClick={() => setMenu('mobile-app')} className={menu === 'mobile-app' ? 'active' : ''}>Mobile App</a>
+        {/* <Link to="/about" className={menu === 'about' ? 'active' : ''}>About Us</Link>
+        <Link to="/delivery" className={menu === 'delivery' ? 'active' : ''}>Delivery</Link>
+        <Link to="/privacy-policy" className={menu === 'privacy' ? 'active' : ''}>Privacy Policy</Link> */}
         <Link to="/contact" onClick={() => setMenu('contact')} className={menu === 'contact' ? 'active' : ''}>Contact Us</Link>
       </ul>
 
@@ -50,8 +53,8 @@ function Navbar({ setShowLogin }) {
       {/* Sliding Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <Link to="/" onClick={closeMobileMenu}>Home</Link>
-        <Link to="/explore-menu" onClick={closeMobileMenu}>Menu</Link>
-        <a href="#AppDownload" onClick={closeMobileMenu}>Mobile App</a>
+        <Link to="/menu" onClick={closeMobileMenu}>Menu</Link>
+        {/* <a href="#AppDownload" onClick={closeMobileMenu}>Mobile App</a> */}
         <Link to="/contact" onClick={closeMobileMenu}>Contact Us</Link>
 
         {/* Mobile Cart */}
