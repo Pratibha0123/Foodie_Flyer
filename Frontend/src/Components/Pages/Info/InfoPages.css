@@ -1,0 +1,23 @@
+.info-page {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+}
+
+.info-page h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.info-page p {
+    margin-bottom: 15px;
+}
+
+.info-page ul {
+    margin: 10px 0 20px 20px;
+    list-style: disc;
+}
