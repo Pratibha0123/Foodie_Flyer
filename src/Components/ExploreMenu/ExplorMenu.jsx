@@ -11,22 +11,23 @@ function ExplorMenu({ category, setCategory }) {
       </p>
       <div className="explore-menu-list">
         {menu_list.map((item, index) => (
-          <div
-            onClick={() =>
-              setCategory(prev => (prev === item.menu_name ? "All" : item.menu_name))
-            }
-            key={index}
-            className='explore-menu-list-item'
+         <div
+             onClick={() =>
+             setCategory(prev => (prev === item.menu_name ? "All" : item.menu_name))
+             }
+             key={index}
+             className='explor-menu-list-item'
           >
-            <div className="image-wrapper">
-              <img
-                className={category === item.menu_name ? "active" : ""}
-                src={item.menu_image}
-                alt={item.menu_name}
-              />
-              <p>{item.menu_name}</p>
-            </div>
-          </div>
+  <div className="image-wrapper">
+    <img
+      className={category === item.menu_name ? "active" : ""}
+      src={item.menu_image}
+      alt={item.menu_name}
+    />
+  </div>
+  <p>{item.menu_name}</p>
+</div>
+
         ))}
       </div>
       <hr />
