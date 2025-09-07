@@ -1,6 +1,5 @@
 .account-page {
     max-width: 800px;
-    /* center on laptop */
     margin: 2rem auto;
     padding: 1rem;
     font-family: "Segoe UI", Tahoma, sans-serif;
@@ -32,9 +31,6 @@
     color: #555;
     font-size: 1rem;
 }
-
-
-/* Buttons */
 
 .edit-btn,
 .link-btn,
@@ -83,9 +79,6 @@
     background: #b21f2d;
 }
 
-
-/* Edit Form */
-
 .edit-form label {
     display: block;
     margin: 1rem 0;
@@ -125,9 +118,6 @@
 .cancel-btn:hover {
     background: #b21f2d;
 }
-
-
-/* 📱 Tablet + Mobile Responsive */
 
 @media (max-width: 992px) {
     .account-page {

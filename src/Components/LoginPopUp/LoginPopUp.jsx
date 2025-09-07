@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../Context/StoreContext";
 
 const LoginPopUp = ({ setShowLogin }) => {
-  const [currState, setCurrState] = useState("Login"); // "Login" or "Sign Up"
+  const [currState, setCurrState] = useState("Login"); 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,6 @@ const LoginPopUp = ({ setShowLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simple localStorage-backed "users" store (for demo)
     const usersJSON = localStorage.getItem("users");
     const users = usersJSON ? JSON.parse(usersJSON) : {};
 
@@ -28,33 +27,29 @@ const LoginPopUp = ({ setShowLogin }) => {
         alert("Please enter an email.");
         return;
       }
-      // choose an avatar from assets or fallback
       const avatar = assets.profile_icon || assets.default_avatar || "";
 
       const newUser = { name: name || email.split("@")[0], email, avatar };
       users[email] = newUser;
       localStorage.setItem("users", JSON.stringify(users));
-      setUser(newUser); // update global user immediately
+      setUser(newUser);
       resetFields();
       setShowLogin(false);
       return;
     }
 
-    // Login flow
+    
     if (!email) {
       alert("Please enter your email.");
       return;
     }
 
     if (users[email]) {
-      // found registered user
       setUser(users[email]);
     } else {
-      // not found — create a lightweight user from email (optional)
       const derivedName = email.split("@")[0] || "User";
       const avatar = assets.profile_icon || assets.default_avatar || "";
       const newUser = { name: derivedName, email, avatar };
-      // optional: save to users so next time it's recognized
       users[email] = newUser;
       localStorage.setItem("users", JSON.stringify(users));
       setUser(newUser);

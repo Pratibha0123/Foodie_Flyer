@@ -12,9 +12,6 @@
     width: 150px;
 }
 
-
-/* Desktop Menu */
-
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -134,9 +131,6 @@
     border-radius: 50%;
 }
 
-
-/* Avatar + Name in navbar */
-
 .navbar-user {
     position: relative;
     display: flex;
@@ -163,9 +157,6 @@
     font-weight: 500;
     color: #333;
 }
-
-
-/* Dropdown */
 
 .user-dropdown {
     position: absolute;
@@ -199,14 +190,8 @@
     background: #f5f5f5;
 }
 
-
-/* Responsive */
-
 @media (max-width: 768px) {
-    .user-name {
-        /* display: none; */
-        /* Only show avatar on mobile */
-    }
+    .user-name {}
 }
 
 @media (max-width: 768px) {

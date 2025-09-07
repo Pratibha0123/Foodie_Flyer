@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { StoreContext } from "../../Context/StoreContext";
 import CartItem from "./CartItem";
 import "./Cart.css";
+import empty_image from "../../../assets/emptyCartImg.png";
 
 const CartPage = () => {
   const navigate = useNavigate();
@@ -24,28 +25,25 @@ const CartPage = () => {
     }
   };
 
+  const subtotal = getTotalCartAmount();
+  const deliveryFee = subtotal === 0 ? 0 : 2;
+
   const getTotalWithDiscount = () => {
-    const total = getTotalCartAmount();
-    return total - total * (discount / 100);
+    return subtotal - subtotal * (discount / 100);
   };
 
-  const isCartEmpty = Object.keys(cartItems).length === 0;
+  const isCartEmpty = !Object.values(cartItems).some((qty) => qty > 0);
 
   return (
     <div className="cart">
-      {/* <h1 className="cart-title">Your Cart</h1> */}
-
       {isCartEmpty ? (
         <div className="empty-cart-box">
           <h2>Your Cart is empty</h2>
           <p>Order today’s deals and find something you’ll love.</p>
+          <img src={empty_image} alt="Empty cart" />
 
           <div className="empty-cart-actions">
             <button onClick={() => navigate("/")}>Order Today’s Deals</button>
-            {/* <button onClick={() => navigate("/login")}>Sign in to your account</button>
-            <button onClick={() => navigate("/signup")} className="signup-btn">
-              Sign up now
-            </button> */}
           </div>
         </div>
       ) : (
@@ -71,25 +69,19 @@ const CartPage = () => {
               <h2>Order Summary</h2>
               <div className="summary-row">
                 <span>Subtotal:</span>
-                <span>${getTotalCartAmount().toFixed(2)}</span>
+                <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="summary-row">
                 <span>Delivery Fee:</span>
-                <span>${getTotalCartAmount() === 0 ? 0 : 2}</span>
+                <span>${deliveryFee}</span>
               </div>
               <div className="summary-row total-row">
                 <b>Total:</b>
-                <b>
-                  $
-                  {(
-                    getTotalWithDiscount() +
-                    (getTotalCartAmount() === 0 ? 0 : 2)
-                  ).toFixed(2)}
-                </b>
+                <b>${(getTotalWithDiscount() + deliveryFee).toFixed(2)}</b>
               </div>
               <button
                 className="checkout-btn"
-                onClick={() => navigate("/placeOrder")}
+                onClick={() => navigate("/payment")}
               >
                 Proceed to Checkout
               </button>

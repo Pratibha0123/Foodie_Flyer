@@ -47,7 +47,6 @@ const Account = () => {
     <div className="account-page">
       <h2 className="account-title">My Account</h2>
 
-      {/* Profile Card */}
       <div className="account-card">
         <h3>Profile</h3>
         {editMode ? (
@@ -79,7 +78,6 @@ const Account = () => {
         )}
       </div>
 
-      {/* Quick Links */}
       <div className="account-card">
         <h3>Quick Access</h3>
         <Link to="/cart" className="link-btn">My Orders</Link>
@@ -117,7 +115,6 @@ const Account = () => {
         </div>
       )}
 
-      {/* Settings */}
       <div className="account-card">
     
         <button className="logout-btn">Logout</button>

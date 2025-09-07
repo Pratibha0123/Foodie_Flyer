@@ -1,10 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../../assets/assets";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const StoreContext = createContext(null);
 
-// eslint-disable-next-line react/prop-types
 export const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItem] = useState({});
   const [user, setUserState] = useState(null);

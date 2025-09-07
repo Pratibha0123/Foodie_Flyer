@@ -28,14 +28,12 @@ function Navbar({ setShowLogin }) {
         <img src={assets.logo} alt="Logo" className="logo" />
       </Link>
 
-      {/* Desktop Menu */}
       <ul className="navbar-menu">
         <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
         <Link to="/menu" onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</Link>
         <Link to="/contact" onClick={() => setMenu("contact")} className={menu === "contact" ? "active" : ""}>Contact Us</Link>
       </ul>
 
-      {/* Right section */}
       <div className="navbar-right">
         <img src={assets.search_icon} alt="Search" />
 
@@ -63,7 +61,6 @@ function Navbar({ setShowLogin }) {
           <button onClick={() => setShowLogin(true)}>Sign In</button>
         )}
 
-        {/* Hamburger */}
         <div className="hamburger" onClick={toggleMobileMenu}>
           <div className={`bar ${mobileMenuOpen ? "open" : ""}`}></div>
           <div className={`bar ${mobileMenuOpen ? "open" : ""}`}></div>
@@ -71,10 +68,8 @@ function Navbar({ setShowLogin }) {
         </div>
       </div>
 
-      {/* Overlay */}
       {mobileMenuOpen && <div className="overlay" onClick={closeMobileMenu}></div>}
 
-      {/* Sliding Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
         <Link to="/" onClick={closeMobileMenu}>Home</Link>
         <Link to="/menu" onClick={closeMobileMenu}>Menu</Link>
