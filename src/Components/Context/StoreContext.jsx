@@ -1,14 +1,14 @@
-/* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../../assets/assets";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const StoreContext = createContext(null);
 
-const StoreContextProvider = (props) => {
+// eslint-disable-next-line react/prop-types
+export const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItem] = useState({});
   const [user, setUserState] = useState(null);
 
-  // Persist user to localStorage when setUser is called
   const setUser = (userObj) => {
     setUserState(userObj);
     if (userObj) {
@@ -18,7 +18,6 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  // Initialize user from localStorage on mount
   useEffect(() => {
     try {
       const saved = localStorage.getItem("currentUser");
@@ -28,18 +27,18 @@ const StoreContextProvider = (props) => {
     }
   }, []);
 
-  // --- CART LOGIC ---
   const addToCart = (itemId) => {
-    if (!cartItems[itemId]) {
-      setCartItem((prev) => ({ ...prev, [itemId]: 1 }));
-    } else {
-      setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    }
+    setCartItem((prev) => ({
+      ...prev,
+      [itemId]: (prev[itemId] || 0) + 1,
+    }));
   };
 
   const removeFromCart = (itemId) => {
-    // if quantity becomes <= 0 we keep it, your UI should ignore <= 0
-    setCartItem((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) - 1 }));
+    setCartItem((prev) => ({
+      ...prev,
+      [itemId]: Math.max((prev[itemId] || 0) - 1, 0),
+    }));
   };
 
   const getTotalCartAmount = () => {
@@ -52,11 +51,6 @@ const StoreContextProvider = (props) => {
     }
     return totalAmount;
   };
-
-  useEffect(() => {
-    console.log("Cart Updated:", cartItems);
-    console.log("User:", user);
-  }, [cartItems, user]);
 
   const contextValue = {
     food_list,
@@ -71,9 +65,7 @@ const StoreContextProvider = (props) => {
 
   return (
     <StoreContext.Provider value={contextValue}>
-      {props.children}
+      {children}
     </StoreContext.Provider>
   );
 };
-
-export default StoreContextProvider;

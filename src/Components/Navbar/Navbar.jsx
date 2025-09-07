@@ -96,7 +96,7 @@ function Navbar({ setShowLogin }) {
             {dropdownOpen && (
               <div className="user-dropdown">
                 <Link to="/account" onClick={() => { setDropdownOpen(false); closeMobileMenu(); }}>Your Account</Link>
-                <Link to="/orders" onClick={() => { setDropdownOpen(false); closeMobileMenu(); }}>Your Orders</Link>
+                <Link to="/cart" onClick={() => { setDropdownOpen(false); closeMobileMenu(); }}>Your Orders</Link>
                 <button onClick={() => { handleLogout(); closeMobileMenu(); }} className="logout-btn">Logout</button>
               </div>
             )}
