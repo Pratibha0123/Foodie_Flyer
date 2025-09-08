@@ -48,8 +48,7 @@ const CartPage = () => {
         </div>
       ) : (
         <div className="cart-content">
-          {/* Left Side: Cart Items */}
-          <div className="cart-items">
+          <div className="cart-deatils">
             {Object.keys(cartItems).map((itemId) => {
               const item = food_list.find((product) => product.id === itemId);
               return item && cartItems[itemId] > 0 ? (
@@ -63,7 +62,6 @@ const CartPage = () => {
             })}
           </div>
 
-          {/* Right Side: Order Summary + Promo Code */}
           <div className="cart-sidebar">
             <div className="cart-summary">
               <h2>Order Summary</h2>

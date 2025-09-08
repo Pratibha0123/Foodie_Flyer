@@ -1,118 +1,191 @@
-.cart-item-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: #fff;
-    border-radius: 12px;
-    padding: 12px;
-    margin: 12px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cart-item-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-.cart-item-img img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #eee;
-}
-
-.cart-item-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.item-name {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: #222;
-}
-
-.item-price,
-.item-qty,
-.item-total {
-    font-size: 14px;
-    margin: 2px 0;
-    color: #444;
-}
-
-.item-total {
-    font-weight: 600;
-    color: #000;
-}
-
-.remove-btn {
-    margin-top: 8px;
-    padding: 8px 14px;
-    background: #ff4d4f;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.3s ease;
-    align-self: flex-start;
-}
-
-.remove-btn:hover {
-    background: #d9363e;
-}
-
-@media (max-width: 480px) {
-    .cart-item-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 12px;
-    }
-    .cart-item-img img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 8px;
-    }
-    .item-name {
-        font-size: 15px;
-    }
-    .item-price,
-    .item-qty,
-    .item-total {
-        font-size: 13px;
-    }
-    .remove-btn {
-        width: 100%;
-        margin-top: 10px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 360px) {
-    .cart-item-card {
-        padding: 10px;
-    }
-    .cart-item-img img {
-        width: 70px;
-        height: 70px;
-    }
-    .item-name {
-        font-size: 14px;
-    }
-    .item-price,
-    .item-qty,
-    .item-total {
-        font-size: 12px;
-    }
-    .remove-btn {
-        font-size: 13px;
-        padding: 8px;
-    }
-}
+            .cart-item-card {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background: #fff;
+                border-radius: 12px;
+                padding: 12px;
+                margin: 12px 0;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            
+            .cart-item-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            }
+            
+            .cart-item-img img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 8px;
+                border: 1px solid #eee;
+            }
+            
+            .cart-item-info {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .item-name {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 4px;
+                color: #222;
+            }
+            
+            .item-price,
+            .item-qty,
+            .item-total {
+                font-size: 14px;
+                margin: 2px 0;
+                color: #444;
+            }
+            
+            .item-total {
+                font-weight: 600;
+                color: #000;
+            }
+            
+            .remove-btn {
+                margin-top: 8px;
+                padding: 8px 14px;
+                background: #ff4d4f;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 500;
+                transition: background 0.3s ease;
+                align-self: flex-start;
+            }
+            
+            .remove-btn:hover {
+                background: #d9363e;
+            }
+            
+            @media (max-width: 900px) and (min-width: 481px) {
+                .cart-item-card {
+                    width: 100%;
+                    /* full width */
+                    flex-direction: row;
+                    /* row layout */
+                    align-items: flex-start;
+                }
+                .cart-item-img {
+                    width: 60%;
+                    /* left side */
+                }
+                .cart-item-img img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+                -item-img img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+                .cart-item-info {
+                    width: 40%;
+                    padding-left: 10px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .cart-item-card {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                .cart-item-img {
+                    width: 60%;
+                }
+                .cart-item-img img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 8px;
+                    border-radius: 10px;
+                }
+                .cart-item-info {
+                    width: 100%;
+                }
+                .remove-btn {
+                    width: 100%;
+                    margin-top: 10px;
+                    text-align: center;
+                }
+            }
+            /* ✅ Extra small phones (≤360px) → Full width image */
+            
+            @media (max-width: 360px) {
+                .cart-item-img {
+                    width: 100%;
+                }
+                .cart-item-img img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            /* ✅ Small phones (max 480px) */
+            
+            @media (max-width: 480px) {
+                .cart-item-card {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                .cart-item-img {
+                    width: 60%;
+                }
+                .cart-item-img img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 8px;
+                    border-radius: 10px;
+                }
+                .item-name {
+                    font-size: 15px;
+                }
+                .item-price,
+                .item-qty,
+                .item-total {
+                    font-size: 13px;
+                }
+                .remove-btn {
+                    width: 100%;
+                    margin-top: 10px;
+                    text-align: center;
+                }
+            }
+            /* ✅ Extra small phones (max 360px) */
+            
+            @media (max-width: 360px) {
+                .cart-item-card {
+                    padding: 10px;
+                }
+                .cart-item-img {
+                    width: 100%;
+                    /* Full width on very small phones */
+                }
+                .cart-item-img img {
+                    width: 100%;
+                    height: auto;
+                }
+                .item-name {
+                    font-size: 14px;
+                }
+                .item-price,
+                .item-qty,
+                .item-total {
+                    font-size: 12px;
+                }
+                .remove-btn {
+                    font-size: 12px;
+                    padding: 6px 10px;
+                }
+            }

@@ -63,15 +63,15 @@
     align-items: flex-start;
 }
 
-.cart-items {
-    flex: 2;
+.cart-deatils {
+    flex: 0 0 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .cart-sidebar {
-    flex: 1;
+    flex: 0 0 40%;
     background: #fff;
     padding: 20px;
     border-radius: 16px;
@@ -158,7 +158,9 @@
     .cart-content {
         flex-direction: column;
     }
+    .cart-deatils,
     .cart-sidebar {
+        flex: 100%;
         width: 100%;
     }
 }
