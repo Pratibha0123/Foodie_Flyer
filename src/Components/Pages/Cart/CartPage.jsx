@@ -67,15 +67,15 @@ const CartPage = () => {
               <h2>Order Summary</h2>
               <div className="summary-row">
                 <span>Subtotal:</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal.toFixed(1)}</span>
               </div>
               <div className="summary-row">
                 <span>Delivery Fee:</span>
-                <span>${deliveryFee}</span>
+                <span>₹{deliveryFee}</span>
               </div>
               <div className="summary-row total-row">
                 <b>Total:</b>
-                <b>${(getTotalWithDiscount() + deliveryFee).toFixed(2)}</b>
+                <b>₹{(getTotalWithDiscount() + deliveryFee).toFixed(2)}</b>
               </div>
               <button
                 className="checkout-btn"

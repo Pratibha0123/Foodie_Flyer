@@ -12,7 +12,7 @@ const CartItem = ({ item, quantity, removeFromCart }) => {
         <p className="item-price">Price: ${item.price.toFixed(2)}</p>
         <p className="item-qty">Qty: {quantity}</p>
         <p className="item-total">
-          Total: ${(item.price * quantity).toFixed(2)}
+          Total: ₹{(item.price * quantity).toFixed(2)}
         </p>
         <button className="remove-btn" onClick={() => removeFromCart(item.id)}>
           Remove
